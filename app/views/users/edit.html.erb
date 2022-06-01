@@ -1,0 +1,14 @@
+<%= render "layouts/errors", model: @user %>
+
+<h2>User info</h2>
+
+<%= form_with model: @user do |f|  %>
+  <div><label>Name</label></div>
+  <%= f.text_field :name %>
+  <div><label>Image</label></div>
+  <%= f.file_field :profile_image, accept: "image/*" %>
+  <div><label>Introduction</label></div>
+  <%= f.text_area :introduction %><br>
+  <%= f.submit "Update User" %>
+<% end %>
+
